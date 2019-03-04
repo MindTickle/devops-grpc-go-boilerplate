@@ -1,5 +1,8 @@
 {
   "devops-grpc-go-boilerplate" : {
     "build_cmd": "echo nothing"
+  },
+  "devops-grpc-go-boilerplate-copy" : {
+    "build_cmd": "echo nothing"
   }
 }
