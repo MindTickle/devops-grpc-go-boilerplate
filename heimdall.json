@@ -1,0 +1,5 @@
+{
+  "devops-grpc-go-boilerplate" : {
+    "build": "echo nothing"
+  }
+}
