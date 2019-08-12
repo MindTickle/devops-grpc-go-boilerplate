@@ -9,6 +9,6 @@ RUN go install github.com/fullstorydev/grpcurl/cmd/grpcurl
 
 EXPOSE 50051
 
-COPY . /app
+ADD . /app
 
 CMD cd /app && go run server/main.go
