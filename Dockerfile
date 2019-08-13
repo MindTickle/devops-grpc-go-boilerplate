@@ -11,5 +11,5 @@ EXPOSE 50051
 
 COPY . /app
 
-RUN echo "random change"
+RUN exit 1
 CMD cd /app && go run server/main.go
