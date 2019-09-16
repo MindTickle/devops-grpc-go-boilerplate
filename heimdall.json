@@ -4,6 +4,7 @@
     "assets" : {
       "type": "terraform",
       "path": "aws-assets"
+    }
   },
   "devops-grpc-go-boilerplate-copy" : {
     "build_cmd": "echo nothing"
