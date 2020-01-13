@@ -9,7 +9,7 @@ RUN go get google.golang.org/grpc/reflection
 RUN go get github.com/fullstorydev/grpcurl
 RUN go install github.com/fullstorydev/grpcurl/cmd/grpcurl
 
-FROM alpine
+FROM base
 
 COPY --from=builder /go/bin/grpcurl /go/bin/grpcurl
 COPY --from=builder /go/src /go/src
