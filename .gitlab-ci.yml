@@ -1,66 +1,33 @@
-stages:
-  - predev-build
-  - deploy-track
-  - unit-test
-  - integration-test
-  - version
-  - build
-  - deploy-dev
-  - rollback-dev
-  - delete-dev
-  - create-release
-  - deploy-staging
-  - rollback-staging
-  - delete-staging
-  - deploy-prod
-  - rollback-prod
-  - delete-prod
-
 include:
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/build-predev-template.yml'
+  - project: 'mindtickle/devops/devops-ci-cd-templates'
+    file: '/mirrored/ci-cd.yml'
 
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/deploy-track-template.yml'
+devops-grpc-go-boilerplate-build:
+  extends: .build
+  variables:
+    PROJECT_NAME: "devops-grpc-go-boilerplate"
 
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/test-unit-template.yml'
+devops-grpc-go-boilerplate-build-heimdall:
+  extends: .build-heimdall
+  variables:
+    PROJECT_NAME: "devops-grpc-go-boilerplate"
 
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/test-integration-template.yml'
+devops-grpc-go-boilerplate-asset-deploy:
+  extends: .asset-deploy
+  variables:
+    PROJECT_NAME: "devops-grpc-go-boilerplate"
 
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/version-template.yml'
+devops-grpc-go-boilerplate-config-deploy:
+  extends: .config-deploy
+  variables:
+    PROJECT_NAME: "devops-grpc-go-boilerplate"
 
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/build-template.yml'
+devops-grpc-go-boilerplate-deploy-heimdall:
+  extends: .artifact-deploy-heimdall
+  variables:
+    PROJECT_NAME: "devops-grpc-go-boilerplate"
 
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/deploy-dev-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/rollback-dev-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/delete-dev-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/create-release-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/deploy-staging-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/rollback-staging-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/delete-staging-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/deploy-prod-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/rollback-prod-template.yml'
-
-  - project: 'mindtickle/mindtickle-devops/ci-cd-templates'
-    file: '/delete-prod-template.yml'
+devops-grpc-go-boilerplate-deploy:
+  extends: .artifact-deploy
+  variables:
+    PROJECT_NAME: "devops-grpc-go-boilerplate"
